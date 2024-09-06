@@ -43,6 +43,15 @@ button:hover {
   cursor: pointer;
 }
 
+:root {
+  --color-main: #626262;
+  --color-second: #7d7d7d;
+  --color-third: #b4ad9e;
+  --color-hover: #03a9f4;
+  --font-family: "Playfair Display", sans-serif;
+  --second-family: "Ubuntu", sans-serif;
+}
+
 body {
   font-family: var(--font-family);
   font-size: 14px;
@@ -103,6 +112,9 @@ body {
 @media screen and (min-width: 768px) {
   .header .nav-list {
     flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -113,7 +125,7 @@ body {
 .header .nav-list__item {
   text-transform: lowercase;
   text-transform: uppercase;
-  color: #7d7d7d;
+  color: var(--color-second);
 }
 .header .nav-list__item:hover {
   color: #03a9f4;
@@ -125,6 +137,12 @@ body {
   .header .label {
     display: none;
   }
+}
+.header .nav-list__link {
+  color: var(--color-second);
+}
+.header .nav-list__link:hover {
+  color: #03a9f4;
 }
 
 .gallery {

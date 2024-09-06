@@ -27,6 +27,9 @@
 
         @media screen and (min-width:768px) {
             flex-direction: row;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
         }
 
         @media screen and (min-width:1200px) {
@@ -37,7 +40,7 @@
     .nav-list__item {
         text-transform: lowercase;
         text-transform: uppercase;
-        color: $color-second;
+        color: var(--color-second);
     }
 
     .nav-list__item:hover {
@@ -52,6 +55,14 @@
         @media screen and (min-width:768px) {
             display: none;
         }
+    }
+
+    .nav-list__link {
+        color: var(--color-second);
+    }
+
+    .nav-list__link:hover {
+        color: $color-hover;
     }
 
 }
