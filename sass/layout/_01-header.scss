@@ -15,15 +15,22 @@
 
     .header-nav {
         margin: 0 auto;
+
+        @media screen and (max-width:767px) {
+            display: none;
+        }
     }
 
 
     .nav-list {
-        // width: 555px;
-        margin: 0 auto;
+
         display: flex;
         justify-content: space-between;
         flex-direction: column;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 556px;
+        gap: 10px;
 
         @media screen and (min-width:768px) {
             // flex-direction: row;
@@ -38,26 +45,6 @@
         }
     }
 
-    .nav-list__item {
-        text-transform: lowercase;
-        text-transform: uppercase;
-        color: var(--color-second);
-    }
-
-    .nav-list__item:hover {
-        color: $color-hover;
-    }
-
-    .header__input {
-        display: none;
-    }
-
-    .label {
-        @media screen and (min-width:768px) {
-            display: none;
-        }
-    }
-
     .nav-list__link {
         color: var(--color-second);
     }
@@ -66,4 +53,76 @@
         color: $color-hover;
     }
 
+    .header__input {
+        display: none;
+    }
+
+    .label {
+        position: relative;
+
+        @media screen and (min-width:768px) {
+            display: none;
+        }
+    }
+
+    .header__input:checked~.label>.label__button-opened {
+        display: none;
+    }
+
+    .header__input~.label>.label__button-closed {
+        display: none;
+    }
+
+    .header__input:checked~.label>.label__button-closed {
+        display: block;
+    }
+
+    input[type="checkbox"]:checked~.label-list {
+        display: flex;
+    }
+
+    .label-list {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        padding: 32px;
+        background-color: wheat;
+
+        @media (min-width: 768px) {
+            display: none;
+        }
+    }
+
+    .label-list__item {
+        position: absolute;
+    }
+
+    .label-list__item:nth-child(1) {
+        top: 20px;
+    }
+
+    .label-list__item:nth-child(2) {
+        top: 40px;
+    }
+
+    .label-list__item:nth-child(3) {
+        top: 60px;
+    }
+
+    .label-list__item:nth-child(4) {
+        top: 80px;
+    }
+
+    .label-list__item:nth-child(5) {
+        right: 0px;
+    }
+
+    .svg {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }
 }

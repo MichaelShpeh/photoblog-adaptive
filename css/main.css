@@ -103,11 +103,19 @@ body {
 .header .header-nav {
   margin: 0 auto;
 }
+@media screen and (max-width: 767px) {
+  .header .header-nav {
+    display: none;
+  }
+}
 .header .nav-list {
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 556px;
+  gap: 10px;
 }
 @media screen and (min-width: 768px) {
   .header .nav-list {
@@ -122,27 +130,72 @@ body {
     display: flex;
   }
 }
-.header .nav-list__item {
-  text-transform: lowercase;
-  text-transform: uppercase;
+.header .nav-list__link {
   color: var(--color-second);
 }
-.header .nav-list__item:hover {
+.header .nav-list__link:hover {
   color: #03a9f4;
 }
 .header .header__input {
   display: none;
+}
+.header .label {
+  position: relative;
 }
 @media screen and (min-width: 768px) {
   .header .label {
     display: none;
   }
 }
-.header .nav-list__link {
-  color: var(--color-second);
+.header .header__input:checked ~ .label > .label__button-opened {
+  display: none;
 }
-.header .nav-list__link:hover {
-  color: #03a9f4;
+.header .header__input ~ .label > .label__button-closed {
+  display: none;
+}
+.header .header__input:checked ~ .label > .label__button-closed {
+  display: block;
+}
+.header input[type=checkbox]:checked ~ .label-list {
+  display: flex;
+}
+.header .label-list {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 32px;
+  background-color: wheat;
+}
+@media (min-width: 768px) {
+  .header .label-list {
+    display: none;
+  }
+}
+.header .label-list__item {
+  position: absolute;
+}
+.header .label-list__item:nth-child(1) {
+  top: 20px;
+}
+.header .label-list__item:nth-child(2) {
+  top: 40px;
+}
+.header .label-list__item:nth-child(3) {
+  top: 60px;
+}
+.header .label-list__item:nth-child(4) {
+  top: 80px;
+}
+.header .label-list__item:nth-child(5) {
+  right: 0px;
+}
+.header .svg {
+  position: absolute;
+  left: 0px;
+  top: 0px;
 }
 
 .gallery {
