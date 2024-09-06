@@ -167,7 +167,7 @@ body {
   width: 100vw;
   height: 100vh;
   padding: 32px;
-  background-color: wheat;
+  background-color: paleturquoise;
 }
 @media (min-width: 768px) {
   .header .label-list {
